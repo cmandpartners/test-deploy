@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div style={{ display: "flex", minHeight: "100vh" }}>
       <Sidebar />
-      <main style={{ flex: 1, marginLeft: 210, padding: "48px 56px", maxWidth: 1100 }}>
+      <main style={{ flex: 1, marginLeft: 210, padding: "48px 56px" }}>
 
         {/* Header */}
         <div style={{ marginBottom: 48 }}>
