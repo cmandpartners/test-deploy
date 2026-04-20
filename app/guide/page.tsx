@@ -53,7 +53,7 @@ export default function GuidePage() {
 
         {/* Comment ça marche */}
         <div style={{ marginBottom: 32 }}>
-          <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase" as const, color: "var(--t1)", marginBottom: 14 }}>
+          <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase" as const, color: "rgba(255,255,255,.70)", marginBottom: 14 }}>
             Comment ça marche
           </div>
           <div style={{
@@ -71,7 +71,7 @@ export default function GuidePage() {
 
         {/* Sections */}
         <div style={{ marginBottom: 32 }}>
-          <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase" as const, color: "var(--t1)", marginBottom: 14 }}>
+          <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase" as const, color: "rgba(255,255,255,.70)", marginBottom: 14 }}>
             Sections
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
@@ -90,7 +90,7 @@ export default function GuidePage() {
 
         {/* Couleurs de statut */}
         <div>
-          <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase" as const, color: "var(--t1)", marginBottom: 14 }}>
+          <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase" as const, color: "rgba(255,255,255,.70)", marginBottom: 14 }}>
             Couleurs de statut
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 8 }}>

@@ -44,7 +44,7 @@ export default function AcquisitionPage() {
         {/* Objectif */}
         <Card>
           <div style={{ padding: 28 }}>
-            <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase" as const, color: "var(--t1)", marginBottom: 12 }}>Objectif</div>
+            <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase" as const, color: "rgba(255,255,255,.70)", marginBottom: 12 }}>Objectif</div>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
               <div style={{ fontSize: 20, fontWeight: 500, color: "var(--t1)" }}>{objective.title}</div>
               <span style={{ fontSize: 11, color: "var(--t4)", fontWeight: 300 }}>{objective.horizon}</span>
