@@ -16,11 +16,6 @@ const todayTasks = [
   { text: "Point plan investissement Phase 1", status: "à faire", color: "var(--orange)" },
 ];
 
-const blockers = [
-  { text: "Configurer Stripe", color: "var(--red)" },
-  { text: "Rédiger contrat / CGV", color: "var(--red)" },
-];
-
 const schedule = [
   { time: "6h30", task: "Briefing Dave" },
   { time: "7h–12h", task: "Entretien finance — budget & comptes" },
@@ -91,20 +86,6 @@ export default function Home() {
                   <span style={{ fontSize: 9, fontWeight: 500, color: "var(--t4)", letterSpacing: ".04em", textTransform: "uppercase" as const }}>{t.status}</span>
                 </div>
               ))}
-              {blockers.length > 0 && (
-                <>
-                  <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: ".08em", textTransform: "uppercase" as const, color: "var(--red)", marginTop: 14, marginBottom: 6 }}>Bloqueurs</div>
-                  {blockers.map((b, i) => (
-                    <div key={b.text} style={{
-                      display: "flex", alignItems: "center", gap: 10,
-                      padding: "8px 0", borderBottom: i < blockers.length - 1 ? "1px solid rgba(255,255,255,.03)" : "none",
-                    }}>
-                      <div style={{ width: 6, height: 6, borderRadius: "50%", background: b.color }} />
-                      <span style={{ fontSize: 13, color: "var(--t2)", fontWeight: 300 }}>{b.text}</span>
-                    </div>
-                  ))}
-                </>
-              )}
             </CardBody>
           </Card>
 
