@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Sidebar from "./components/Sidebar";
 import { Card, CardHead, CardBody } from "./components/Card";
 
@@ -10,10 +13,16 @@ const kpis = [
 
 const today = "Dimanche 20 avril 2026";
 
-const todayTasks = [
-  { text: "Entretien finance hebdomadaire", status: "levier", color: "var(--t1)" },
-  { text: "Revoir budget mensuel + comptes", status: "à faire", color: "var(--orange)" },
-  { text: "Point plan investissement Phase 1", status: "à faire", color: "var(--orange)" },
+const businessTasks = [
+  { id: "b1", text: "Finaliser la plateforme MAP Signature", priority: "urgent", color: "var(--red)" },
+  { id: "b2", text: "Configurer Stripe", priority: "urgent", color: "var(--red)" },
+  { id: "b3", text: "Rédiger contrat / CGV", priority: "urgent", color: "var(--red)" },
+];
+
+const persoTasks = [
+  { id: "p1", text: "Entretien finance hebdomadaire", priority: "urgent", color: "var(--red)" },
+  { id: "p2", text: "Revoir budget mensuel + comptes", priority: "à faire", color: "var(--orange)" },
+  { id: "p3", text: "Point plan investissement Phase 1", priority: "à faire", color: "var(--orange)" },
 ];
 
 const schedule = [
@@ -26,7 +35,63 @@ const schedule = [
   { time: "20h30", task: "Briefing soir" },
 ];
 
+function TaskItem({ task, done, onToggle }: {
+  task: { id: string; text: string; priority: string; color: string };
+  done: boolean;
+  onToggle: () => void;
+}) {
+  return (
+    <div
+      onClick={onToggle}
+      style={{
+        display: "flex", alignItems: "center", gap: 10,
+        padding: "10px 0", cursor: "pointer",
+        opacity: done ? 0.4 : 1, transition: "opacity .2s",
+      }}
+    >
+      <div style={{
+        width: 18, height: 18, borderRadius: 5, flexShrink: 0,
+        border: done ? "none" : `1.5px solid ${task.color}`,
+        background: done ? "var(--green)" : "transparent",
+        display: "flex", alignItems: "center", justifyContent: "center",
+        fontSize: 10, color: done ? "#000" : "transparent", fontWeight: 700,
+        transition: "all .2s",
+      }}>
+        {done && "✓"}
+      </div>
+      <span style={{
+        flex: 1, fontSize: 13, color: "var(--t2)", fontWeight: 300,
+        textDecoration: done ? "line-through" : "none",
+      }}>{task.text}</span>
+      <span style={{
+        fontSize: 9, fontWeight: 500, color: "var(--t4)",
+        letterSpacing: ".04em", textTransform: "uppercase" as const,
+      }}>{done ? "fait" : task.priority}</span>
+    </div>
+  );
+}
+
 export default function Home() {
+  const [doneTasks, setDoneTasks] = useState<Set<string>>(new Set());
+
+  const toggle = (id: string, text: string, category: string) => {
+    const next = new Set(doneTasks);
+    if (next.has(id)) {
+      next.delete(id);
+    } else {
+      next.add(id);
+      fetch("/api/task-done", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ task: text, category }),
+      }).catch(() => {});
+    }
+    setDoneTasks(next);
+  };
+
+  const allTasks = [...businessTasks, ...persoTasks];
+  const doneCount = allTasks.filter(t => doneTasks.has(t.id)).length;
+
   return (
     <div style={{ display: "flex", minHeight: "100vh" }}>
       <Sidebar />
@@ -38,7 +103,6 @@ export default function Home() {
           background: "#000",
           border: "1px solid rgba(255,255,255,.10)",
         }}>
-          {/* Image with mask fade */}
           <div style={{
             position: "absolute", inset: 0,
             backgroundImage: "url('/banner.jpg')",
@@ -74,17 +138,15 @@ export default function Home() {
         {/* Tâches du jour + Planning du jour */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 12 }}>
           <Card>
-            <CardHead title="Tâches du jour" meta={String(todayTasks.length)} />
+            <CardHead title="Tâches du jour" meta={`${doneCount}/${allTasks.length}`} />
             <CardBody>
-              {todayTasks.map((t, i) => (
-                <div key={t.text} style={{
-                  display: "flex", alignItems: "center", gap: 10,
-                  padding: "10px 0", borderBottom: i < todayTasks.length - 1 ? "1px solid rgba(255,255,255,.03)" : "none",
-                }}>
-                  <div style={{ width: 6, height: 6, borderRadius: "50%", background: t.color }} />
-                  <span style={{ flex: 1, fontSize: 13, color: "var(--t2)", fontWeight: 300 }}>{t.text}</span>
-                  <span style={{ fontSize: 9, fontWeight: 500, color: "var(--t4)", letterSpacing: ".04em", textTransform: "uppercase" as const }}>{t.status}</span>
-                </div>
+              <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: ".08em", textTransform: "uppercase" as const, color: "var(--t3)", marginBottom: 8 }}>Business</div>
+              {businessTasks.map((t) => (
+                <TaskItem key={t.id} task={t} done={doneTasks.has(t.id)} onToggle={() => toggle(t.id, t.text, "business")} />
+              ))}
+              <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: ".08em", textTransform: "uppercase" as const, color: "var(--t3)", marginTop: 16, marginBottom: 8 }}>Personnel</div>
+              {persoTasks.map((t) => (
+                <TaskItem key={t.id} task={t} done={doneTasks.has(t.id)} onToggle={() => toggle(t.id, t.text, "perso")} />
               ))}
             </CardBody>
           </Card>
