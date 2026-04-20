@@ -51,7 +51,7 @@ export default function Home() {
 
         <div style={{
           padding: 0, borderRadius: 14, marginBottom: 16,
-          position: "relative", overflow: "hidden", minHeight: 180,
+          position: "relative", overflow: "hidden", minHeight: 200,
           background: "#000",
           border: "1px solid rgba(255,255,255,.10)",
         }}>
@@ -59,7 +59,7 @@ export default function Home() {
           <div style={{
             position: "absolute", inset: 0,
             backgroundImage: "url('/banner.jpg')",
-            backgroundSize: "cover", backgroundPosition: "right top",
+            backgroundSize: "auto 100%", backgroundPosition: "right center",
             pointerEvents: "none",
           }} />
           {/* Smooth black to transparent gradient */}
@@ -69,7 +69,7 @@ export default function Home() {
             pointerEvents: "none",
           }} />
 
-          <div style={{ position: "relative", padding: "44px 40px", zIndex: 1, display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "center", minHeight: 180, gap: 10 }}>
+          <div style={{ position: "relative", padding: "44px 40px", zIndex: 1, display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "center", minHeight: 200, gap: 10 }}>
             <p style={{ fontSize: 11, fontWeight: 400, letterSpacing: ".08em", textTransform: "uppercase" as const, color: "rgba(255,255,255,.5)" }}>{today}</p>
             <h2 style={{ fontSize: 20, fontWeight: 600, letterSpacing: "-.02em", lineHeight: 1.5, whiteSpace: "nowrap" }}>
               Cette journée te rapproche du toi que Dieu veut que tu sois.
