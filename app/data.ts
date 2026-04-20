@@ -55,5 +55,6 @@ export const habits = [
 export const events = [
   { title: "Entretien finance", sub: "Dim. 19 avril · fait", dot: "done" },
   { title: "Tâches finance", sub: "Lun. 20 avril · 16h", dot: "next" },
+  { title: "Finaliser plateforme MAP Signature", sub: "Lun. 21 avril · matin", dot: "next" },
   { title: "Entretien finance", sub: "Dim. 4 mai", dot: "future" },
 ];
