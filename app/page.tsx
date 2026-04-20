@@ -52,21 +52,27 @@ export default function Home() {
         <div style={{
           padding: 0, borderRadius: 14, marginBottom: 16,
           position: "relative", overflow: "hidden", minHeight: 180,
-          backgroundImage: "url('/banner.jpg')",
-          backgroundSize: "cover", backgroundPosition: "center 40%",
+          background: "#000",
           border: "1px solid rgba(255,255,255,.10)",
         }}>
-          {/* Dark overlay for text readability */}
+          {/* Image positioned right */}
+          <div style={{
+            position: "absolute", top: 0, right: 0, bottom: 0, width: "60%",
+            backgroundImage: "url('/banner.jpg')",
+            backgroundSize: "cover", backgroundPosition: "right center",
+            pointerEvents: "none",
+          }} />
+          {/* Black to transparent gradient overlay */}
           <div style={{
             position: "absolute", inset: 0,
-            background: "rgba(0,0,0,.45)",
+            background: "linear-gradient(to right, #000 30%, rgba(0,0,0,.6) 55%, transparent 80%)",
             pointerEvents: "none",
           }} />
 
-          <div style={{ position: "relative", padding: "44px 40px", zIndex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: 180, gap: 14 }}>
-            <p style={{ fontSize: 12, fontWeight: 500, letterSpacing: ".1em", textTransform: "uppercase" as const, color: "rgba(255,255,255,.7)", textShadow: "0 1px 8px rgba(0,0,0,.5)" }}>{today}</p>
-            <h2 style={{ fontSize: 24, fontWeight: 600, letterSpacing: "-.02em", lineHeight: 1.4, textAlign: "center", textShadow: "0 2px 20px rgba(0,0,0,.6)" }}>
-              Cette journée te rapproche du toi que Dieu veut que tu sois.
+          <div style={{ position: "relative", padding: "44px 40px", zIndex: 1, display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "center", minHeight: 180, gap: 10, maxWidth: "55%" }}>
+            <p style={{ fontSize: 11, fontWeight: 400, letterSpacing: ".08em", textTransform: "uppercase" as const, color: "rgba(255,255,255,.5)" }}>{today}</p>
+            <h2 style={{ fontSize: 22, fontWeight: 600, letterSpacing: "-.02em", lineHeight: 1.5 }}>
+              Cette journée te rapproche<br />du toi que Dieu veut que tu sois.
             </h2>
           </div>
         </div>
