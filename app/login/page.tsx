@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const [password, setPassword] = useState("");
+  const [show, setShow] = useState(false);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
@@ -45,23 +46,35 @@ export default function LoginPage() {
           </p>
         </div>
 
-        <input
-          type="password"
-          placeholder="Mot de passe"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          autoFocus
-          style={{
-            width: "100%", padding: "12px 16px",
-            background: "rgba(255,255,255,.03)",
-            border: `1px solid ${error ? "rgba(248,113,113,.4)" : "rgba(255,255,255,.07)"}`,
-            borderRadius: 10, color: "#fff", fontSize: 14,
-            fontFamily: "inherit", outline: "none",
-            transition: "border-color .2s",
-          }}
-          onFocus={(e) => { if (!error) e.target.style.borderColor = "rgba(255,255,255,.15)"; }}
-          onBlur={(e) => { if (!error) e.target.style.borderColor = "rgba(255,255,255,.07)"; }}
-        />
+        <div style={{ position: "relative" }}>
+          <input
+            type={show ? "text" : "password"}
+            placeholder="Mot de passe"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            autoFocus
+            style={{
+              width: "100%", padding: "12px 44px 12px 16px",
+              background: "rgba(255,255,255,.03)",
+              border: `1px solid ${error ? "rgba(248,113,113,.4)" : "rgba(255,255,255,.07)"}`,
+              borderRadius: 10, color: "#fff", fontSize: 14,
+              fontFamily: "inherit", outline: "none",
+              transition: "border-color .2s",
+            }}
+          />
+          <button
+            type="button"
+            onClick={() => setShow(!show)}
+            style={{
+              position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)",
+              background: "none", border: "none", cursor: "pointer",
+              color: "rgba(255,255,255,.25)", fontSize: 13, fontFamily: "inherit",
+              padding: 4, lineHeight: 1,
+            }}
+          >
+            {show ? "◉" : "○"}
+          </button>
+        </div>
 
         {error && (
           <p style={{ fontSize: 12, color: "rgba(248,113,113,.7)", textAlign: "center" }}>
