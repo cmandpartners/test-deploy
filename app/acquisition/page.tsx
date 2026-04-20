@@ -2,26 +2,26 @@ import Sidebar from "../components/Sidebar";
 import { Card, CardHead, CardBody } from "../components/Card";
 
 const tunnel = [
-  { step: 1, title: "Vidéo 3 (publique)", desc: "Titre TBD — accroche large", status: "tournée", arrow: true },
-  { step: 2, title: "Vidéo 2 (publique)", desc: "\"Comment Ne Pas devenir Un Simple Outil De Plus Sur Le Marché\"", status: "tournée", arrow: true },
-  { step: 3, title: "Vidéo 1 (non répertoriée)", desc: "\"Pourquoi Votre SaaS N'explose Pas Malgré Un Produit Solide\" — VSL", status: "tournée", arrow: true },
-  { step: 4, title: "Formulaire Fillout", desc: "Candidature — questions de qualification", status: "actif", arrow: true },
-  { step: 5, title: "Appel stratégique", desc: "Closing — présentation de l'accompagnement MAP", status: "à préparer", arrow: false },
+  { step: "1", title: "Vidéo 3 (publique)", status: "tournée", color: "var(--green)" },
+  { step: "2", title: "Vidéo 2 (publique)", status: "tournée", color: "var(--green)" },
+  { step: "3", title: "Vidéo 1 — VSL (non répertoriée)", status: "tournée", color: "var(--green)" },
+  { step: "4", title: "Formulaire Fillout", status: "actif", color: "var(--blue)" },
+  { step: "5", title: "Appel stratégique", status: "à préparer", color: "var(--orange)" },
 ];
 
-const twitterDaily = [
-  { task: "1-2 tweets sur positionnement SaaS", time: "~10 min" },
-  { task: "2-3 réponses à des fondateurs SaaS", time: "~10 min" },
-  { task: "2-3 DM personnalisés à des prospects ciblés", time: "~15 min" },
+const twitterTasks = [
+  { task: "1-2 tweets positionnement SaaS", time: "~10 min" },
+  { task: "2-3 réponses fondateurs SaaS", time: "~10 min" },
+  { task: "2-3 DM prospects ciblés", time: "~15 min" },
 ];
 
 const todo = [
-  { item: "Formulaire Fillout : structure des questions", done: false },
-  { item: "Script d'appel de closing", done: false },
-  { item: "Templates messages outreach Twitter", done: false },
-  { item: "Publier les 3 vidéos YouTube", done: false },
-  { item: "Configurer cards + liens description YouTube", done: false },
-  { item: "Lancer routine Twitter/X quotidienne", done: false },
+  { item: "Structure questions Fillout", done: false },
+  { item: "Script appel closing", done: false },
+  { item: "Templates outreach Twitter", done: false },
+  { item: "Publier les 3 vidéos", done: false },
+  { item: "Cards + liens YouTube", done: false },
+  { item: "Lancer routine Twitter/X", done: false },
 ];
 
 export default function AcquisitionPage() {
@@ -30,108 +30,65 @@ export default function AcquisitionPage() {
       <Sidebar />
       <main style={{ flex: 1, marginLeft: 210, padding: "48px 56px" }}>
 
-        <div style={{ marginBottom: 48 }}>
+        <div style={{ marginBottom: 40 }}>
           <h2 style={{ fontSize: 22, fontWeight: 500, letterSpacing: "-.03em" }}>Acquisition</h2>
-          <p style={{ fontSize: 13, color: "var(--t4)", marginTop: 6, fontWeight: 300 }}>
-            Stratégie validée le 17 avril 2026 · YouTube + Twitter/X + Outreach DM
-          </p>
+          <p style={{ fontSize: 13, color: "var(--t4)", marginTop: 6, fontWeight: 300 }}>YouTube + Twitter/X + Outreach DM</p>
         </div>
 
-        {/* Stratégie résumée */}
-        <div style={{
-          background: "linear-gradient(135deg, var(--card-hi) 0%, var(--card) 60%, var(--card-end) 100%)",
-          border: "1px solid var(--border)", borderRadius: 14, padding: 30, marginBottom: 12,
-          position: "relative", overflow: "hidden",
-        }}>
-          <div style={{
-            position: "absolute", top: -60, right: -60, width: 180, height: 180,
-            background: "radial-gradient(circle, rgba(167,139,250,.04) 0%, transparent 70%)",
-            pointerEvents: "none",
-          }} />
-          <div style={{ fontSize: 9, fontWeight: 500, letterSpacing: ".12em", textTransform: "uppercase" as const, color: "var(--t4)", marginBottom: 16 }}>
-            Principe
-          </div>
-          <div style={{ fontSize: 16, fontWeight: 300, color: "var(--t3)", lineHeight: 1.65, maxWidth: 700 }}>
-            Zéro audience, zéro client, zéro preuve sociale. <strong style={{ fontWeight: 600, color: "var(--t1)" }}>YouTube</strong> pour le contenu de conviction,{" "}
-            <strong style={{ fontWeight: 600, color: "var(--t1)" }}>Twitter/X</strong> pour la distribution et l&apos;outreach direct.
-            L&apos;outreach DM est le seul levier réaliste pour le 1er client.
-          </div>
-        </div>
-
-        {/* Tunnel de conversion */}
+        {/* Tunnel */}
         <Card>
-          <CardHead title="Tunnel de conversion" meta="5 étapes" />
+          <CardHead title="Tunnel de conversion" />
           <CardBody>
-            <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-              {tunnel.map((t) => (
-                <div key={t.step}>
-                  <div style={{
-                    display: "flex", alignItems: "center", gap: 16,
-                    padding: "16px 4px",
-                  }}>
-                    <div style={{
-                      width: 28, height: 28, borderRadius: 8, flexShrink: 0,
-                      background: t.status === "actif" ? "rgba(167,139,250,.12)" : t.status === "à préparer" ? "rgba(255,255,255,.03)" : "rgba(255,255,255,.06)",
-                      border: `1px solid ${t.status === "actif" ? "rgba(167,139,250,.20)" : "rgba(255,255,255,.06)"}`,
-                      display: "flex", alignItems: "center", justifyContent: "center",
-                      fontSize: 12, fontWeight: 600, color: t.status === "actif" ? "var(--accent)" : "var(--t3)",
-                    }}>{t.step}</div>
-                    <div style={{ flex: 1 }}>
-                      <div style={{ fontSize: 13, fontWeight: 500, color: "var(--t1)" }}>{t.title}</div>
-                      <div style={{ fontSize: 12, color: "var(--t3)", marginTop: 3, fontWeight: 300 }}>{t.desc}</div>
-                    </div>
-                    <span style={{
-                      fontSize: 9, fontWeight: 500, letterSpacing: ".04em", textTransform: "uppercase" as const,
-                      color: t.status === "actif" ? "var(--accent)" : t.status === "tournée" ? "var(--green)" : "var(--t4)",
-                    }}>{t.status}</span>
-                  </div>
-                  {t.arrow && (
-                    <div style={{ paddingLeft: 17, color: "var(--t4)", fontSize: 12 }}>↓</div>
-                  )}
+            {tunnel.map((t, i) => (
+              <div key={t.step} style={{
+                display: "flex", alignItems: "center", gap: 14,
+                padding: "12px 0", borderBottom: i < tunnel.length - 1 ? "1px solid rgba(255,255,255,.03)" : "none",
+              }}>
+                <div style={{
+                  width: 24, height: 24, borderRadius: 6, flexShrink: 0,
+                  background: "rgba(255,255,255,.04)", border: "1px solid rgba(255,255,255,.06)",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  fontSize: 11, fontWeight: 600, color: "var(--t2)",
+                }}>{t.step}</div>
+                <span style={{ flex: 1, fontSize: 13, color: "var(--t2)", fontWeight: 300 }}>{t.title}</span>
+                <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                  <div style={{ width: 6, height: 6, borderRadius: "50%", background: t.color }} />
+                  <span style={{ fontSize: 9, fontWeight: 500, color: "var(--t4)", letterSpacing: ".04em", textTransform: "uppercase" as const }}>{t.status}</span>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </CardBody>
         </Card>
 
         <div style={{ height: 12 }} />
 
-        {/* Twitter + TODO */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+          {/* Twitter */}
           <Card>
             <CardHead title="Routine Twitter/X" meta="~35 min/jour" />
             <CardBody>
-              {twitterDaily.map((t) => (
+              {twitterTasks.map((t, i) => (
                 <div key={t.task} style={{
-                  display: "flex", justifyContent: "space-between", alignItems: "center",
-                  padding: "14px 0", borderBottom: "1px solid rgba(255,255,255,.03)",
+                  display: "flex", justifyContent: "space-between",
+                  padding: "10px 0", borderBottom: i < twitterTasks.length - 1 ? "1px solid rgba(255,255,255,.03)" : "none",
                 }}>
                   <span style={{ fontSize: 13, color: "var(--t2)", fontWeight: 300 }}>{t.task}</span>
-                  <span style={{ fontSize: 11, color: "var(--t4)", fontWeight: 400 }}>{t.time}</span>
+                  <span style={{ fontSize: 11, color: "var(--t4)" }}>{t.time}</span>
                 </div>
               ))}
-              <div style={{ marginTop: 16, padding: 16, borderRadius: 10, background: "rgba(255,255,255,.02)", border: "1px solid rgba(255,255,255,.03)" }}>
-                <div style={{ fontSize: 11, fontWeight: 500, color: "var(--t3)", letterSpacing: ".04em", textTransform: "uppercase" as const, marginBottom: 8 }}>Cible</div>
-                <div style={{ fontSize: 13, color: "var(--t2)", fontWeight: 300, lineHeight: 1.6 }}>
-                  Fondateurs de SaaS B2B en phase de croissance.<br/>
-                  Pas de e-commerce, marketplace ou non-tech.
-                </div>
-              </div>
             </CardBody>
           </Card>
 
+          {/* TODO */}
           <Card>
-            <CardHead title="Reste à faire" meta={`0/${todo.length}`} />
+            <CardHead title="Reste à faire" meta={String(todo.length)} />
             <CardBody>
-              {todo.map((t) => (
+              {todo.map((t, i) => (
                 <div key={t.item} style={{
-                  display: "flex", alignItems: "center", gap: 12,
-                  padding: "10px 0", borderBottom: "1px solid rgba(255,255,255,.03)",
+                  display: "flex", alignItems: "center", gap: 10,
+                  padding: "10px 0", borderBottom: i < todo.length - 1 ? "1px solid rgba(255,255,255,.03)" : "none",
                 }}>
-                  <div style={{
-                    width: 16, height: 16, borderRadius: 4,
-                    background: "rgba(255,255,255,.03)", border: "1px solid rgba(255,255,255,.04)",
-                  }} />
+                  <div style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--orange)" }} />
                   <span style={{ fontSize: 13, color: "var(--t2)", fontWeight: 300 }}>{t.item}</span>
                 </div>
               ))}
