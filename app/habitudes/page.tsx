@@ -7,14 +7,14 @@ import Link from "next/link";
 
 const habits = [
   { id: "h1", name: "Travailler sur mon business", capital: "financier", color: "var(--blue)" },
-  { id: "h2", name: "Gym", capital: "physique", color: "var(--orange)" },
-  { id: "h3", name: "Cardio (foot, basket, autre)", capital: "physique", color: "var(--orange)" },
+  { id: "h2", name: "Gym", capital: "physique", color: "var(--red)" },
+  { id: "h3", name: "Cardio (foot, basket, autre)", capital: "physique", color: "var(--red)" },
   { id: "h4", name: "Exercice pour améliorer mon éloquence", capital: "culturel", color: "var(--green)" },
 ];
 
 const capitalConfig: Record<string, { label: string; color: string }> = {
   financier: { label: "Capital financier", color: "var(--blue)" },
-  physique: { label: "Capital physique", color: "var(--orange)" },
+  physique: { label: "Capital physique", color: "var(--red)" },
   culturel: { label: "Capital culturel", color: "var(--green)" },
 };
 
@@ -84,7 +84,7 @@ function Chart({ view }: { view: ViewMode }) {
 
   const colors: Record<string, { stroke: string; fill: string }> = {
     financier: { stroke: "#0a84ff", fill: "rgba(10,132,255,.15)" },
-    physique: { stroke: "#e8956d", fill: "rgba(232,149,109,.12)" },
+    physique: { stroke: "#ff3040", fill: "rgba(255,48,64,.12)" },
     culturel: { stroke: "#00d084", fill: "rgba(0,208,132,.12)" },
   };
 
@@ -257,7 +257,7 @@ export default function HabitudesPage() {
                   <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#0a84ff" }} /> Business
                 </div>
                 <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, color: "var(--t3)" }}>
-                  <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#e8956d" }} /> Sport
+                  <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#ff3040" }} /> Sport
                 </div>
                 <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, color: "var(--t3)" }}>
                   <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#00d084" }} /> Éloquence
