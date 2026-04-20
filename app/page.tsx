@@ -59,8 +59,7 @@ export default function Home() {
           <div style={{
             position: "absolute", inset: 0,
             backgroundImage: "url('/banner.jpg')",
-            backgroundSize: "contain", backgroundPosition: "right center",
-            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover", backgroundPosition: "right center",
             pointerEvents: "none",
           }} />
           {/* Smooth black to transparent gradient */}
