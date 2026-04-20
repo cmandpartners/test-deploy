@@ -66,13 +66,13 @@ export default function Home() {
           {/* Smooth black to transparent gradient */}
           <div style={{
             position: "absolute", inset: 0,
-            background: "linear-gradient(to right, #000 25%, rgba(0,0,0,.85) 40%, rgba(0,0,0,.3) 65%, transparent 90%)",
+            background: "linear-gradient(to right, #000 15%, rgba(0,0,0,.9) 30%, rgba(0,0,0,.6) 50%, rgba(0,0,0,.2) 70%, transparent 90%)",
             pointerEvents: "none",
           }} />
 
           <div style={{ position: "relative", padding: "44px 40px", zIndex: 1, display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "center", minHeight: 200, gap: 10 }}>
             <p style={{ fontSize: 11, fontWeight: 400, letterSpacing: ".08em", textTransform: "uppercase" as const, color: "rgba(255,255,255,.5)" }}>{today}</p>
-            <h2 style={{ fontSize: 20, fontWeight: 600, letterSpacing: "-.02em", lineHeight: 1.5, whiteSpace: "nowrap" }}>
+            <h2 style={{ fontSize: 24, fontWeight: 600, letterSpacing: "-.02em", lineHeight: 1.5, maxWidth: "70%" }}>
               Cette journée te rapproche du toi que Dieu veut que tu sois.
             </h2>
           </div>
