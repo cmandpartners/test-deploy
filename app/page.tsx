@@ -45,9 +45,24 @@ export default function Home() {
       <Sidebar />
       <main style={{ flex: 1, marginLeft: 210, padding: "48px 56px" }}>
 
-        <div style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 500, letterSpacing: "-.03em" }}>Bonjour, Clément</h2>
-          <p style={{ fontSize: 13, color: "var(--t4)", marginTop: 6, fontWeight: 300 }}>Lundi 21 avril 2026</p>
+        <div style={{
+          padding: "32px 36px", borderRadius: 14, marginBottom: 16,
+          background: "linear-gradient(135deg, #0a0a0a 0%, #111113 40%, #0e0e10 100%)",
+          border: "1px solid rgba(255,255,255,.06)",
+          position: "relative", overflow: "hidden",
+        }}>
+          <div style={{
+            position: "absolute", top: -80, right: -40, width: 260, height: 260,
+            background: "radial-gradient(circle, rgba(0,208,132,.04) 0%, transparent 70%)",
+            pointerEvents: "none",
+          }} />
+          <p style={{ fontSize: 11, color: "var(--t4)", fontWeight: 300, marginBottom: 10 }}>Lundi 21 avril 2026</p>
+          <h2 style={{ fontSize: 24, fontWeight: 600, letterSpacing: "-.03em", lineHeight: 1.3 }}>
+            Tu construis CM&P depuis zéro, seul, depuis la Martinique.
+          </h2>
+          <p style={{ fontSize: 15, color: "var(--t3)", marginTop: 10, fontWeight: 300, lineHeight: 1.5, maxWidth: 600 }}>
+            Chaque jour rapproche la Barbade. Aujourd&apos;hui, un seul objectif : avancer sur ce qui compte vraiment.
+          </p>
         </div>
 
         {/* KPIs */}
