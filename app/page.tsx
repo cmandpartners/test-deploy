@@ -62,7 +62,7 @@ export default function Home() {
 
           <div style={{ position: "relative", padding: "52px 40px", zIndex: 1, display: "flex", alignItems: "center", justifyContent: "center", minHeight: 180 }}>
             <h2 style={{ fontSize: 24, fontWeight: 600, letterSpacing: "-.02em", lineHeight: 1.4, textAlign: "center", textShadow: "0 2px 20px rgba(0,0,0,.6)" }}>
-              Chaque jour rapproche la Barbade.
+              Chaque jour te rapproche de celui que Dieu a prévu.
             </h2>
           </div>
         </div>
