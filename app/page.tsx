@@ -59,7 +59,7 @@ export default function Home() {
           <div style={{
             position: "absolute", inset: 0,
             backgroundImage: "url('/banner.jpg')",
-            backgroundSize: "cover", backgroundPosition: "right center",
+            backgroundSize: "cover", backgroundPosition: "right top",
             pointerEvents: "none",
           }} />
           {/* Smooth black to transparent gradient */}
@@ -95,7 +95,7 @@ export default function Home() {
         {/* Tâche levier */}
         <Card>
           <div style={{ padding: 28 }}>
-            <div style={{ fontSize: 9, fontWeight: 500, letterSpacing: ".12em", textTransform: "uppercase" as const, color: "var(--t4)", marginBottom: 12 }}>
+            <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase" as const, color: "var(--t1)", marginBottom: 12 }}>
               Tâche levier du jour
             </div>
             <div style={{ fontSize: 20, fontWeight: 500, color: "var(--t1)", letterSpacing: "-.02em" }}>{leverTask.title}</div>
