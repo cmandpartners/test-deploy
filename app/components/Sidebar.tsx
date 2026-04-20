@@ -13,7 +13,7 @@ const nav = [
   ]},
   { label: "Personnel", items: [
     { name: "Finance", icon: "○", href: "/finance" },
-    { name: "Bien-être", icon: "●", href: "/bien-etre" },
+    { name: "Habitudes", icon: "●", href: "/habitudes" },
   ]},
   { label: "", items: [
     { name: "Guide", icon: "?", href: "/guide" },
