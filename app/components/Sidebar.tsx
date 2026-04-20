@@ -3,19 +3,20 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const nav = [
-  { label: "Principal", items: [
-    { name: "Vue d'ensemble", icon: "◆", href: "/", count: null },
-    { name: "Tâches", icon: "□", href: "/taches", count: 7 },
-    { name: "Planning", icon: "○", href: "/planning", count: null },
+  { label: "", items: [
+    { name: "Dashboard", icon: "◆", href: "/" },
   ]},
   { label: "Business", items: [
-    { name: "CM & Partners", icon: "△", href: "/business", count: null },
-    { name: "Acquisition", icon: "↗", href: "/acquisition", count: null },
-    { name: "Plateforme", icon: "■", href: "/plateforme", count: null },
+    { name: "CM & Partners", icon: "△", href: "/business" },
+    { name: "Acquisition", icon: "↗", href: "/acquisition" },
+    { name: "Plateforme", icon: "■", href: "/plateforme" },
   ]},
   { label: "Personnel", items: [
-    { name: "Finance", icon: "◆", href: "/finance", count: null },
-    { name: "Objectifs", icon: "★", href: "/objectifs", count: null },
+    { name: "Finance", icon: "○", href: "/finance" },
+    { name: "Bien-être", icon: "●", href: "/bien-etre" },
+  ]},
+  { label: "", items: [
+    { name: "Guide", icon: "?", href: "/guide" },
   ]},
 ];
 
@@ -30,9 +31,9 @@ export default function Sidebar() {
       </div>
 
       <nav className="sb-nav">
-        {nav.map((section) => (
-          <div key={section.label}>
-            <div className="sb-label">{section.label}</div>
+        {nav.map((section, si) => (
+          <div key={si}>
+            {section.label && <div className="sb-label">{section.label}</div>}
             {section.items.map((item) => (
               <Link
                 key={item.href}
@@ -41,7 +42,6 @@ export default function Sidebar() {
               >
                 <span className="sb-icon">{item.icon}</span>
                 {item.name}
-                {item.count !== null && <span className="sb-count">{item.count}</span>}
               </Link>
             ))}
           </div>
