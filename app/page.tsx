@@ -10,11 +10,6 @@ const kpis = [
 
 const today = "Dimanche 20 avril 2026";
 
-const leverTask = {
-  title: "Finaliser la plateforme MAP Signature",
-  context: "Stripe, contrat/CGV, onboarding Fillout, vidéos bienvenue",
-};
-
 const todayTasks = [
   { text: "Entretien finance hebdomadaire", status: "levier", color: "var(--t1)" },
   { text: "Revoir budget mensuel + comptes", status: "à faire", color: "var(--orange)" },
@@ -34,13 +29,6 @@ const schedule = [
   { time: "16h–17h", task: "Tâches secondaires" },
   { time: "18h+", task: "Sport" },
   { time: "20h30", task: "Briefing soir" },
-];
-
-const weekHabits = [
-  { name: "Sport", done: 1, target: 3 },
-  { name: "Réveil 6h", done: 2, target: 7 },
-  { name: "Contenu", done: 0, target: 7 },
-  { name: "Outreach", done: 0, target: 7 },
 ];
 
 export default function Home() {
@@ -93,21 +81,38 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Tâche levier */}
-        <Card>
-          <div style={{ padding: 28 }}>
-            <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase" as const, color: "rgba(255,255,255,.70)", marginBottom: 12 }}>
-              Tâche levier du jour
-            </div>
-            <div style={{ fontSize: 20, fontWeight: 500, color: "var(--t1)", letterSpacing: "-.02em" }}>{leverTask.title}</div>
-            <div style={{ fontSize: 13, color: "var(--t3)", marginTop: 6, fontWeight: 300 }}>{leverTask.context}</div>
-          </div>
-        </Card>
-
-        <div style={{ height: 12 }} />
-
-        {/* Planning jour + Tâches + Bloqueurs */}
+        {/* Tâches du jour + Planning du jour */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 12 }}>
+          <Card>
+            <CardHead title="Tâches du jour" meta={String(todayTasks.length)} />
+            <CardBody>
+              {todayTasks.map((t, i) => (
+                <div key={t.text} style={{
+                  display: "flex", alignItems: "center", gap: 10,
+                  padding: "10px 0", borderBottom: i < todayTasks.length - 1 ? "1px solid rgba(255,255,255,.03)" : "none",
+                }}>
+                  <div style={{ width: 6, height: 6, borderRadius: "50%", background: t.color }} />
+                  <span style={{ flex: 1, fontSize: 13, color: "var(--t2)", fontWeight: 300 }}>{t.text}</span>
+                  <span style={{ fontSize: 9, fontWeight: 500, color: "var(--t4)", letterSpacing: ".04em", textTransform: "uppercase" as const }}>{t.status}</span>
+                </div>
+              ))}
+              {blockers.length > 0 && (
+                <>
+                  <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: ".08em", textTransform: "uppercase" as const, color: "var(--red)", marginTop: 14, marginBottom: 6 }}>Bloqueurs</div>
+                  {blockers.map((b, i) => (
+                    <div key={b.text} style={{
+                      display: "flex", alignItems: "center", gap: 10,
+                      padding: "8px 0", borderBottom: i < blockers.length - 1 ? "1px solid rgba(255,255,255,.03)" : "none",
+                    }}>
+                      <div style={{ width: 6, height: 6, borderRadius: "50%", background: b.color }} />
+                      <span style={{ fontSize: 13, color: "var(--t2)", fontWeight: 300 }}>{b.text}</span>
+                    </div>
+                  ))}
+                </>
+              )}
+            </CardBody>
+          </Card>
+
           <Card>
             <CardHead title="Planning du jour" />
             <CardBody>
@@ -122,54 +127,6 @@ export default function Home() {
               ))}
             </CardBody>
           </Card>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            <Card>
-              <CardHead title="Aujourd'hui" meta={String(todayTasks.length)} />
-              <CardBody>
-                {todayTasks.map((t, i) => (
-                  <div key={t.text} style={{
-                    display: "flex", alignItems: "center", gap: 10,
-                    padding: "10px 0", borderBottom: i < todayTasks.length - 1 ? "1px solid rgba(255,255,255,.03)" : "none",
-                  }}>
-                    <div style={{ width: 6, height: 6, borderRadius: "50%", background: t.color }} />
-                    <span style={{ flex: 1, fontSize: 13, color: "var(--t2)", fontWeight: 300 }}>{t.text}</span>
-                    <span style={{ fontSize: 9, fontWeight: 500, color: "var(--t4)", letterSpacing: ".04em", textTransform: "uppercase" as const }}>{t.status}</span>
-                  </div>
-                ))}
-              </CardBody>
-            </Card>
-
-            <Card>
-              <CardHead title="Bloqueurs" meta={String(blockers.length)} />
-              <CardBody>
-                {blockers.map((b, i) => (
-                  <div key={b.text} style={{
-                    display: "flex", alignItems: "center", gap: 10,
-                    padding: "10px 0", borderBottom: i < blockers.length - 1 ? "1px solid rgba(255,255,255,.03)" : "none",
-                  }}>
-                    <div style={{ width: 6, height: 6, borderRadius: "50%", background: b.color }} />
-                    <span style={{ fontSize: 13, color: "var(--t2)", fontWeight: 300 }}>{b.text}</span>
-                  </div>
-                ))}
-              </CardBody>
-            </Card>
-
-            <Card>
-              <CardHead title="Habitudes" meta="S17" />
-              <CardBody>
-                {weekHabits.map((h, i) => (
-                  <div key={h.name} style={{
-                    display: "flex", justifyContent: "space-between", alignItems: "center",
-                    padding: "8px 0", borderBottom: i < weekHabits.length - 1 ? "1px solid rgba(255,255,255,.03)" : "none",
-                  }}>
-                    <span style={{ fontSize: 13, color: "var(--t2)", fontWeight: 300 }}>{h.name}</span>
-                    <span style={{ fontSize: 14, fontWeight: 600, color: "var(--t1)" }}>{h.done}<span style={{ fontSize: 11, fontWeight: 300, color: "var(--t3)" }}>/{h.target}</span></span>
-                  </div>
-                ))}
-              </CardBody>
-            </Card>
-          </div>
         </div>
 
       </main>
