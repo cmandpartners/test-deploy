@@ -32,9 +32,10 @@ const weekData = [
 const routine = [
   { time: "6h00", task: "Réveil" },
   { time: "6h30", task: "Briefing Dave" },
-  { time: "7h–12h", task: "Travail concentré" },
+  { time: "7h–12h", task: "Travail concentré — tâche levier" },
   { time: "12h–13h", task: "Déjeuner" },
-  { time: "13h–15h", task: "Sport / lecture / formation" },
+  { time: "13h–17h", task: "Tâches secondaires / admin" },
+  { time: "18h+", task: "Sport" },
   { time: "20h30", task: "Briefing soir" },
   { time: "22h", task: "Coucher (8h de sommeil)" },
 ];

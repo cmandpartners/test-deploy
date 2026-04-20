@@ -27,8 +27,9 @@ const schedule = [
   { time: "6h30", task: "Briefing Dave" },
   { time: "7h–12h", task: "Finaliser plateforme MAP Signature" },
   { time: "12h–13h", task: "Déjeuner" },
-  { time: "13h–15h", task: "Sport / lecture" },
+  { time: "13h–16h", task: "Tâches secondaires" },
   { time: "16h", task: "Tâches finance" },
+  { time: "18h+", task: "Sport" },
   { time: "20h30", task: "Briefing soir" },
 ];
 
