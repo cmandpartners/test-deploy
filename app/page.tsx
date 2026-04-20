@@ -42,10 +42,10 @@ export default function Home() {
           <div style={{
             position: "absolute", inset: 0,
             backgroundImage: "url('/banner.jpg')",
-            backgroundSize: "cover", backgroundPosition: "center",
+            backgroundSize: "cover", backgroundPosition: "center 70%",
             pointerEvents: "none",
-            WebkitMaskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,.15) 20%, rgba(0,0,0,.5) 40%, rgba(0,0,0,.8) 60%, #000 80%)",
-            maskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,.15) 20%, rgba(0,0,0,.5) 40%, rgba(0,0,0,.8) 60%, #000 80%)",
+            WebkitMaskImage: "linear-gradient(to right, transparent 0%, transparent 30%, rgba(0,0,0,.3) 50%, rgba(0,0,0,.7) 70%, #000 90%)",
+            maskImage: "linear-gradient(to right, transparent 0%, transparent 30%, rgba(0,0,0,.3) 50%, rgba(0,0,0,.7) 70%, #000 90%)",
           }} />
 
           <div style={{ position: "relative", padding: "44px 40px", zIndex: 1, display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "center", minHeight: 200, gap: 10 }}>
