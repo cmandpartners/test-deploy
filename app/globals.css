@@ -9,9 +9,9 @@
   --border: rgba(255,255,255,.05);
   --border-hi: rgba(255,255,255,.08);
   --t1: #fff;
-  --t2: rgba(255,255,255,.50);
-  --t3: rgba(255,255,255,.38);
-  --t4: rgba(255,255,255,.22);
+  --t2: rgba(255,255,255,.75);
+  --t3: rgba(255,255,255,.55);
+  --t4: rgba(255,255,255,.40);
   /* MAP Signature status colors */
   --red: #ff3040;
   --orange: #ff9f0a;

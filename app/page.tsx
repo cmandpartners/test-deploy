@@ -55,24 +55,24 @@ export default function Home() {
           background: "#000",
           border: "1px solid rgba(255,255,255,.10)",
         }}>
-          {/* Image positioned right */}
+          {/* Image full width, positioned right */}
           <div style={{
-            position: "absolute", top: 0, right: 0, bottom: 0, width: "60%",
+            position: "absolute", inset: 0,
             backgroundImage: "url('/banner.jpg')",
             backgroundSize: "cover", backgroundPosition: "right center",
             pointerEvents: "none",
           }} />
-          {/* Black to transparent gradient overlay */}
+          {/* Smooth black to transparent gradient */}
           <div style={{
             position: "absolute", inset: 0,
-            background: "linear-gradient(to right, #000 30%, rgba(0,0,0,.6) 55%, transparent 80%)",
+            background: "linear-gradient(to right, #000 20%, rgba(0,0,0,.85) 35%, rgba(0,0,0,.4) 60%, transparent 85%)",
             pointerEvents: "none",
           }} />
 
-          <div style={{ position: "relative", padding: "44px 40px", zIndex: 1, display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "center", minHeight: 180, gap: 10, maxWidth: "55%" }}>
+          <div style={{ position: "relative", padding: "44px 40px", zIndex: 1, display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "center", minHeight: 180, gap: 10 }}>
             <p style={{ fontSize: 11, fontWeight: 400, letterSpacing: ".08em", textTransform: "uppercase" as const, color: "rgba(255,255,255,.5)" }}>{today}</p>
-            <h2 style={{ fontSize: 22, fontWeight: 600, letterSpacing: "-.02em", lineHeight: 1.5 }}>
-              Cette journée te rapproche<br />du toi que Dieu veut que tu sois.
+            <h2 style={{ fontSize: 20, fontWeight: 600, letterSpacing: "-.02em", lineHeight: 1.5, whiteSpace: "nowrap" }}>
+              Cette journée te rapproche du toi que Dieu veut que tu sois.
             </h2>
           </div>
         </div>
