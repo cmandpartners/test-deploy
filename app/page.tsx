@@ -51,12 +51,12 @@ export default function Home() {
           position: "relative", overflow: "hidden", minHeight: 180,
           backgroundImage: "url('/banner.jpg')",
           backgroundSize: "cover", backgroundPosition: "center 40%",
-          border: "1px solid rgba(255,255,255,.06)",
+          border: "1px solid rgba(255,255,255,.10)",
         }}>
           {/* Dark overlay for text readability */}
           <div style={{
             position: "absolute", inset: 0,
-            background: "linear-gradient(135deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.35) 50%, rgba(0,0,0,.45) 100%)",
+            background: "rgba(0,0,0,.45)",
             pointerEvents: "none",
           }} />
 
