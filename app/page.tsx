@@ -47,11 +47,10 @@ export default function Home() {
           <div style={{
             position: "absolute", inset: 0,
             backgroundImage: "url('/banner.jpg')",
-            backgroundSize: "auto 100%", backgroundPosition: "right center",
-            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover", backgroundPosition: "center",
             pointerEvents: "none",
-            WebkitMaskImage: "linear-gradient(to right, transparent 10%, rgba(0,0,0,.3) 30%, rgba(0,0,0,.7) 50%, #000 70%)",
-            maskImage: "linear-gradient(to right, transparent 10%, rgba(0,0,0,.3) 30%, rgba(0,0,0,.7) 50%, #000 70%)",
+            WebkitMaskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,.15) 20%, rgba(0,0,0,.5) 40%, rgba(0,0,0,.8) 60%, #000 80%)",
+            maskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,.15) 20%, rgba(0,0,0,.5) 40%, rgba(0,0,0,.8) 60%, #000 80%)",
           }} />
 
           <div style={{ position: "relative", padding: "44px 40px", zIndex: 1, display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "center", minHeight: 200, gap: 10 }}>
