@@ -11,8 +11,8 @@ const kpis = [
 const today = "Dimanche 20 avril 2026";
 
 const leverTask = {
-  title: "Entretien finance hebdomadaire",
-  context: "Budget, comptes, plan d'investissement Phase 1",
+  title: "Finaliser la plateforme MAP Signature",
+  context: "Stripe, contrat/CGV, onboarding Fillout, vidéos bienvenue",
 };
 
 const todayTasks = [
