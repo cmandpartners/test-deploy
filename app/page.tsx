@@ -43,19 +43,15 @@ export default function Home() {
           background: "#000",
           border: "1px solid rgba(255,255,255,.10)",
         }}>
-          {/* Image full width, positioned right */}
+          {/* Image with mask fade */}
           <div style={{
             position: "absolute", inset: 0,
             backgroundImage: "url('/banner.jpg')",
             backgroundSize: "auto 100%", backgroundPosition: "right center",
             backgroundRepeat: "no-repeat",
             pointerEvents: "none",
-          }} />
-          {/* Smooth black to transparent gradient */}
-          <div style={{
-            position: "absolute", inset: 0,
-            background: "linear-gradient(to right, #000 15%, rgba(0,0,0,.9) 30%, rgba(0,0,0,.6) 50%, rgba(0,0,0,.2) 70%, transparent 90%)",
-            pointerEvents: "none",
+            WebkitMaskImage: "linear-gradient(to right, transparent 10%, rgba(0,0,0,.3) 30%, rgba(0,0,0,.7) 50%, #000 70%)",
+            maskImage: "linear-gradient(to right, transparent 10%, rgba(0,0,0,.3) 30%, rgba(0,0,0,.7) 50%, #000 70%)",
           }} />
 
           <div style={{ position: "relative", padding: "44px 40px", zIndex: 1, display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "center", minHeight: 200, gap: 10 }}>
