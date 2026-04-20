@@ -49,36 +49,21 @@ export default function Home() {
         <div style={{
           padding: 0, borderRadius: 14, marginBottom: 16,
           position: "relative", overflow: "hidden", minHeight: 180,
-          background: "linear-gradient(135deg, #0a1628 0%, #0d1117 40%, #091a12 100%)",
+          backgroundImage: "url('/banner.jpg')",
+          backgroundSize: "cover", backgroundPosition: "center 40%",
           border: "1px solid rgba(255,255,255,.06)",
         }}>
-          {/* Horizon glow */}
+          {/* Dark overlay for text readability */}
           <div style={{
-            position: "absolute", bottom: 0, left: 0, right: 0, height: "60%",
-            background: "linear-gradient(180deg, transparent 0%, rgba(0,208,132,.03) 60%, rgba(0,208,132,.06) 100%)",
+            position: "absolute", inset: 0,
+            background: "linear-gradient(135deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.35) 50%, rgba(0,0,0,.45) 100%)",
             pointerEvents: "none",
           }} />
-          {/* Sun glow */}
-          <div style={{
-            position: "absolute", bottom: -40, right: "15%", width: 300, height: 160,
-            background: "radial-gradient(ellipse, rgba(255,159,10,.06) 0%, transparent 70%)",
-            pointerEvents: "none",
-          }} />
-          {/* Stars */}
-          <div style={{ position: "absolute", top: 20, left: "20%", width: 2, height: 2, borderRadius: "50%", background: "rgba(255,255,255,.15)" }} />
-          <div style={{ position: "absolute", top: 35, left: "45%", width: 1, height: 1, borderRadius: "50%", background: "rgba(255,255,255,.10)" }} />
-          <div style={{ position: "absolute", top: 15, right: "25%", width: 2, height: 2, borderRadius: "50%", background: "rgba(255,255,255,.12)" }} />
-          <div style={{ position: "absolute", top: 45, right: "40%", width: 1, height: 1, borderRadius: "50%", background: "rgba(255,255,255,.08)" }} />
 
-          <div style={{ position: "relative", padding: "36px 40px", zIndex: 1 }}>
-            <p style={{ fontSize: 11, color: "rgba(255,255,255,.20)", fontWeight: 300, marginBottom: 14, letterSpacing: ".06em", textTransform: "uppercase" as const }}>Lundi 21 avril 2026</p>
-            <h2 style={{ fontSize: 22, fontWeight: 600, letterSpacing: "-.02em", lineHeight: 1.4, maxWidth: 550 }}>
+          <div style={{ position: "relative", padding: "52px 40px", zIndex: 1, display: "flex", alignItems: "center", justifyContent: "center", minHeight: 180 }}>
+            <h2 style={{ fontSize: 24, fontWeight: 600, letterSpacing: "-.02em", lineHeight: 1.4, textAlign: "center", textShadow: "0 2px 20px rgba(0,0,0,.6)" }}>
               Chaque jour rapproche la Barbade.
             </h2>
-            <p style={{ fontSize: 14, color: "var(--t3)", marginTop: 10, fontWeight: 300, lineHeight: 1.6, maxWidth: 500 }}>
-              Aujourd&apos;hui, un seul objectif : avancer sur ce qui compte vraiment.
-              Tu es en train de construire quelque chose que personne d&apos;autre ne peut construire.
-            </p>
           </div>
         </div>
 

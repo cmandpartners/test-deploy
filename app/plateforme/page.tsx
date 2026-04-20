@@ -77,7 +77,7 @@ export default function PlateformePage() {
                   padding: "11px 0", borderBottom: i < completed.length - 1 ? "1px solid rgba(255,255,255,.03)" : "none",
                 }}>
                   <div style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--green)" }} />
-                  <span style={{ fontSize: 13, color: "var(--t3)", fontWeight: 300 }}>{c}</span>
+                  <span style={{ fontSize: 13, color: "var(--t2)", fontWeight: 300 }}>{c}</span>
                 </div>
               ))}
             </CardBody>

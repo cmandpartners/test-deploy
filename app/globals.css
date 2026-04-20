@@ -10,8 +10,8 @@
   --border-hi: rgba(255,255,255,.08);
   --t1: #fff;
   --t2: rgba(255,255,255,.50);
-  --t3: rgba(255,255,255,.25);
-  --t4: rgba(255,255,255,.12);
+  --t3: rgba(255,255,255,.38);
+  --t4: rgba(255,255,255,.22);
   /* MAP Signature status colors */
   --red: #ff3040;
   --orange: #ff9f0a;
@@ -110,8 +110,8 @@ body {
   display: flex; align-items: center; justify-content: space-between;
 }
 .c-title {
-  font-size: 11px; font-weight: 500; letter-spacing: .06em;
-  text-transform: uppercase; color: var(--t3);
+  font-size: 11px; font-weight: 600; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--t2);
 }
 .c-meta {
   font-size: 11px; font-weight: 500; letter-spacing: .06em;
