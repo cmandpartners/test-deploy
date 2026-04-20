@@ -82,7 +82,7 @@ export default function Home() {
           {kpis.map((k) => (
             <Card key={k.label}>
               <div style={{ padding: 22 }}>
-                <div style={{ fontSize: 11, color: "var(--t3)" }}>{k.label}</div>
+                <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase" as const, color: "var(--t1)" }}>{k.label}</div>
                 <div style={{ fontSize: 32, fontWeight: 600, letterSpacing: "-.04em", lineHeight: 1, marginTop: 10 }}>
                   {k.value}<span style={{ fontSize: 16, fontWeight: 300, color: "var(--t3)" }}>{k.unit}</span>
                 </div>
