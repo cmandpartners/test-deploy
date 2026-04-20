@@ -60,12 +60,13 @@ export default function Home() {
             position: "absolute", inset: 0,
             backgroundImage: "url('/banner.jpg')",
             backgroundSize: "auto 100%", backgroundPosition: "right center",
+            backgroundRepeat: "no-repeat",
             pointerEvents: "none",
           }} />
           {/* Smooth black to transparent gradient */}
           <div style={{
             position: "absolute", inset: 0,
-            background: "linear-gradient(to right, #000 20%, rgba(0,0,0,.85) 35%, rgba(0,0,0,.4) 60%, transparent 85%)",
+            background: "linear-gradient(to right, #000 25%, rgba(0,0,0,.85) 40%, rgba(0,0,0,.3) 65%, transparent 90%)",
             pointerEvents: "none",
           }} />
 
