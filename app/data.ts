@@ -1,6 +1,6 @@
 export const kpis = [
   { label: "Clients", value: "0", unit: "", sub: "Objectif : 1 avant juin", progress: 0 },
-  { label: "Plateforme", value: "60", unit: "%", sub: "4 bloqueurs", progress: 60 },
+  { label: "Soumissions", value: "0", unit: "", sub: "Formulaire candidature · aujourd'hui", progress: 0 },
   { label: "Portefeuille", value: "1 559", unit: " €", sub: "PEA + LEP", progress: 5 },
   { label: "Sport", value: "1", unit: " /3", sub: "Sessions cette semaine", progress: 33 },
 ];
