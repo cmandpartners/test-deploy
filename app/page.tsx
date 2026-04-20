@@ -42,7 +42,7 @@ export default function Home() {
           <div style={{
             position: "absolute", inset: 0,
             backgroundImage: "url('/banner.jpg')",
-            backgroundSize: "cover", backgroundPosition: "center 70%",
+            backgroundSize: "cover", backgroundPosition: "center 30%",
             pointerEvents: "none",
             WebkitMaskImage: "linear-gradient(to right, transparent 0%, transparent 30%, rgba(0,0,0,.3) 50%, rgba(0,0,0,.7) 70%, #000 90%)",
             maskImage: "linear-gradient(to right, transparent 0%, transparent 30%, rgba(0,0,0,.3) 50%, rgba(0,0,0,.7) 70%, #000 90%)",
