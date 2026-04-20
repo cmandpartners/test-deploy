@@ -8,14 +8,17 @@ const kpis = [
   { label: "Sport", value: "1", unit: "/3", sub: "Cette semaine" },
 ];
 
+const today = "Dimanche 20 avril 2026";
+
 const leverTask = {
-  title: "Finaliser la plateforme MAP Signature",
-  context: "Compléter les fonctionnalités + générer les livrables manquants",
+  title: "Entretien finance hebdomadaire",
+  context: "Budget, comptes, plan d'investissement Phase 1",
 };
 
 const todayTasks = [
-  { text: "Finaliser plateforme MAP Signature", status: "levier", color: "var(--t1)" },
-  { text: "Tâches finance (16h)", status: "planifié", color: "var(--blue)" },
+  { text: "Entretien finance hebdomadaire", status: "levier", color: "var(--t1)" },
+  { text: "Revoir budget mensuel + comptes", status: "à faire", color: "var(--orange)" },
+  { text: "Point plan investissement Phase 1", status: "à faire", color: "var(--orange)" },
 ];
 
 const blockers = [
@@ -25,10 +28,10 @@ const blockers = [
 
 const schedule = [
   { time: "6h30", task: "Briefing Dave" },
-  { time: "7h–12h", task: "Finaliser plateforme MAP Signature" },
+  { time: "7h–12h", task: "Entretien finance — budget & comptes" },
   { time: "12h–13h", task: "Déjeuner" },
-  { time: "13h–16h", task: "Tâches secondaires" },
-  { time: "16h", task: "Tâches finance" },
+  { time: "13h–16h", task: "Plan investissement Phase 1" },
+  { time: "16h–17h", task: "Tâches secondaires" },
   { time: "18h+", task: "Sport" },
   { time: "20h30", task: "Briefing soir" },
 ];
@@ -60,7 +63,8 @@ export default function Home() {
             pointerEvents: "none",
           }} />
 
-          <div style={{ position: "relative", padding: "52px 40px", zIndex: 1, display: "flex", alignItems: "center", justifyContent: "center", minHeight: 180 }}>
+          <div style={{ position: "relative", padding: "44px 40px", zIndex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: 180, gap: 14 }}>
+            <p style={{ fontSize: 12, fontWeight: 500, letterSpacing: ".1em", textTransform: "uppercase" as const, color: "rgba(255,255,255,.7)", textShadow: "0 1px 8px rgba(0,0,0,.5)" }}>{today}</p>
             <h2 style={{ fontSize: 24, fontWeight: 600, letterSpacing: "-.02em", lineHeight: 1.4, textAlign: "center", textShadow: "0 2px 20px rgba(0,0,0,.6)" }}>
               Cette journée te rapproche du toi que Dieu veut que tu sois.
             </h2>
@@ -98,7 +102,7 @@ export default function Home() {
         {/* Planning jour + Tâches + Bloqueurs */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 12 }}>
           <Card>
-            <CardHead title="Journée" />
+            <CardHead title="Planning du jour" />
             <CardBody>
               {schedule.map((s, i) => (
                 <div key={s.task} style={{
