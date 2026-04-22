@@ -14,9 +14,9 @@ const kpis = [
 const today = "Mercredi 22 avril 2026";
 
 const businessTasks = [
-  { id: "b1", text: "Rédiger contrat / CGV MAP Signature (levier)", priority: "urgent", color: "var(--red)" },
-  { id: "b2", text: "Valider rendu plateforme MAP après deploy", priority: "à faire", color: "var(--orange)" },
-  { id: "b3", text: "Configurer Stripe", priority: "à faire", color: "var(--orange)" },
+  { id: "b1", text: "Vérifier + implémenter livrables plateforme MAP (levier)", priority: "urgent", color: "var(--red)" },
+  { id: "b2", text: "Test parcours client bout en bout", priority: "à faire", color: "var(--orange)" },
+  { id: "b3", text: "Valider rendu visuel après deploy", priority: "à faire", color: "var(--orange)" },
 ];
 
 const persoTasks = [
@@ -26,9 +26,9 @@ const persoTasks = [
 
 const schedule = [
   { time: "6h30", task: "Briefing Dave + affirmation" },
-  { time: "7h–12h", task: "Tâche levier : Contrat / CGV MAP Signature" },
+  { time: "7h–12h", task: "Tâche levier : livrables + parcours plateforme MAP" },
   { time: "12h–13h", task: "Déjeuner" },
-  { time: "13h–16h", task: "Tâches secondaires (Stripe, plateforme)" },
+  { time: "13h–16h", task: "Tâches secondaires plateforme" },
   { time: "16h–17h", task: "Sport" },
   { time: "18h+", task: "Détente / famille" },
   { time: "20h30", task: "Briefing soir" },
