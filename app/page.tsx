@@ -11,27 +11,28 @@ const kpis = [
   { label: "Sport", value: "1", unit: "/3", sub: "Cette semaine" },
 ];
 
-const today = "Mercredi 22 avril 2026";
+const today = "Mardi 12 mai 2026";
 
 const businessTasks = [
-  { id: "b1", text: "Vérifier + implémenter livrables plateforme MAP (levier)", priority: "urgent", color: "var(--red)" },
-  { id: "b2", text: "Test parcours client bout en bout", priority: "à faire", color: "var(--orange)" },
-  { id: "b3", text: "Valider rendu visuel après deploy", priority: "à faire", color: "var(--orange)" },
+  { id: "b1", text: "Sourcing Founding Cohort : remplir la Sheet avec 30-50 SaaS B2B FR (50-200K MRR) — LEVIER", priority: "urgent", color: "var(--red)" },
+  { id: "b2", text: "Élargir les sources : LinkedIn + Insta + podcasts FR + annuaires (France Digitale, Maddyness)", priority: "à faire", color: "var(--orange)" },
+  { id: "b3", text: "Identifier signal exploitable par prospect pour personnalisation DM", priority: "à faire", color: "var(--orange)" },
 ];
 
 const persoTasks = [
   { id: "p1", text: "Sport (objectif 3/sem)", priority: "à faire", color: "var(--orange)" },
-  { id: "p2", text: "Affirmation quotidienne au réveil", priority: "à faire", color: "var(--orange)" },
+  { id: "p2", text: "Affirmation quotidienne", priority: "à faire", color: "var(--orange)" },
 ];
 
 const schedule = [
-  { time: "6h30", task: "Briefing Dave + affirmation" },
-  { time: "7h–12h", task: "Tâche levier : livrables + parcours plateforme MAP" },
+  { time: "7h–10h", task: "Tâche levier : sourcing Founding Cohort — mining LinkedIn + X + Insta + podcasts" },
+  { time: "10h–12h", task: "Sourcing : levées récentes (Maddyness, France Digitale, Welcome to the Jungle scale-ups)" },
   { time: "12h–13h", task: "Déjeuner" },
-  { time: "13h–16h", task: "Tâches secondaires plateforme" },
-  { time: "16h–17h", task: "Sport" },
-  { time: "18h+", task: "Détente / famille" },
-  { time: "20h30", task: "Briefing soir" },
+  { time: "13h–15h", task: "Sourcing : qualification + identification du signal exploitable par prospect" },
+  { time: "15h–16h", task: "Consolidation Sheet : objectif 30-50 SaaS qualifiés à 50-200K MRR" },
+  { time: "16h–17h", task: "Sport (capital physique)" },
+  { time: "17h–19h", task: "Famille / temps libre" },
+  { time: "19h30", task: "Briefing soir" },
 ];
 
 /* ── Habitudes ── */
